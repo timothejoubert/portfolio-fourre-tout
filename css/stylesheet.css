@@ -14,10 +14,8 @@
     --padding-window: 50px;
 
     --listProject--width: 100%;
-    --transi-2: 200ms;
-    --transi-hover: 300ms;
-    --transi-4: 400ms;
 
+    --transi-hover: 300ms;
     --transi-max: 1000ms;
 }
 .modal--open{

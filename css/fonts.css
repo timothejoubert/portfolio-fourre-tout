@@ -1,0 +1,136 @@
+/*********/
+/* FONTS */
+/*********/
+
+/* Variables */
+@font-face {
+	font-family: "Anybody";
+	src: local("Anybody"), url("../assets/fonts/Anybody[slnt,wdth,wght].ttf")
+	  format("truetype");
+	font-display: block;
+	font-style: normal italic;
+	font-weight: 100 900;
+	font-stretch: 10% 400%;
+	font-style: oblique -10 0; 
+	font-display: swap;
+}
+
+
+/* poppins */
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Black-Black.otf") format("truetype");
+    font-weight: 800;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Black-BlackItalic.otf") format("truetype");
+    font-weight: 800;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Bold.otf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-BoldItalic.otf") format("truetype");
+    font-weight: 600;
+    font-style: italic;
+}   
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Medium.otf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-MediumItalic.otf") format("truetype");
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Regular.otf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-RegularItalic.otf") format("truetype");
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Light.otf") format("truetype");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-LightItalic.otf") format("truetype");
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-Thin.otf") format("truetype");
+    font-weight: 200;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins-ThinItalic.otf") format("truetype");
+    font-weight: 200;
+    font-style: italic;
+}
+
+  
+/* Darker Grotesque */
+@font-face {
+	font-family: "Darker-Grotesque";
+	font-weight: 800;
+	src: url('../assets/fonts/DarkerGrotesque-Black.ttf') format('truetype');
+	font-display: swap;
+  }
+  @font-face {
+	font-family: "Darker-Grotesque";
+	font-weight: 700;
+	src: url('../assets/fonts/DarkerGrotesque-ExtraBold.ttf') format('truetype');
+	font-display: swap;
+  }
+  @font-face {
+	font-family: "Darker-Grotesque";
+	font-weight: 650;
+	src: url('../assets/fonts/DarkerGrotesque-SemiBold.ttf') format('truetype');
+	font-display: swap;
+  }
+  @font-face {
+	font-family: "Darker-Grotesque";
+	font-weight: 600;
+	src: url('../assets/fonts/DarkerGrotesque-Bold.ttf') format('truetype');
+	font-display: swap;
+  }
+  @font-face {
+	font-family: "Darker-Grotesque";
+	font-weight: 500;
+	src: url('../assets/fonts/DarkerGrotesque-Medium.ttf') format('truetype');
+	font-display: swap;
+  }
+  @font-face {
+	font-family: "Darker-Grotesque";
+	font-weight: 400;
+	src: url('../assets/fonts/DarkerGrotesque-Regular.ttf') format('truetype');
+	font-display: swap;
+  }
+  @font-face {
+	font-family: "Darker-Grotesque";
+	font-weight: 200;
+	src: url('../assets/fonts/DarkerGrotesque-Light.ttf') format('truetype');
+	font-display: swap;
+  }
+@font-face {
+    font-family: "Noi";
+    src: url('../assets/fonts/noi-grotesk-var.ttf') format('truetype');
+    font-display: swap;
+}
+

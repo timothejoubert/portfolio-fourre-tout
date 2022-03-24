@@ -38,7 +38,7 @@ body{
     background-color: var(--dark-color);
     color: var(--light-color);
 }
-h1, h2, h3, h4, h5, h6, p, a, span{
+h1, h2, h3, h4, h5, h6, p, a, span, label, div{
     font-family: "Noi", "Poppins", sans-serif;
 }
 a{
@@ -48,6 +48,17 @@ a{
 li{
     list-style: none;
 }
+
+/* Reset input range's default styling */
+
+input[type=range],
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+input[type=range]:focus {
+    outline: none;
+}
+
 
 /* Header */
 .wrapper{
@@ -98,13 +109,26 @@ header{
 .setting__icon{
     cursor: pointer;
 }
-.bg__setting{
+.setting__icon:hover .circle--side{
+    transform: translateY(-20%);
+}
+.setting__icon:hover .circle--center{
+    transform: translateY(20%);
+}
+.rect__setting{
     fill: var(--light-color);
 }
+.circle__setting{
+    fill: var(--light-color);
+    stroke: var(--dark-color);
+    stroke-width: 2px;
+    transition: transform var(--transi-hover) ease;
+}
 
-/* Filter */
+/* FILTER */
 .filter {
     position: absolute;
+    width: calc(100% - var(--padding-window) * 2);
     padding-top: 2rem;
     transform: translateY(-100%);
     transition: transform 500ms;
@@ -112,9 +136,101 @@ header{
 .filter--open .filter{
     transform: translateY(0);
 }
+.filter__section + .filter__section{
+    padding-top: 1.5rem;
+}
+.filter__section h2{
+    padding-bottom: 1rem;
+}
+.interface__inner + .interface__inner {
+    padding-top: 0.8rem;
+}
+.interface__inner{
+    display: flex;
+    align-items: center;
+}
+.interface__inner h3 {
+    min-width: 120px;
+}
+.filter input[type=range]{
+    width: 100%;
+    background-color: transparent;
+}
+.filter input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: var(--light-color);
+    border: none;
+    border-radius: 5px;
+}
+/*.filter input[type=range]:focus::-webkit-slider-runnable-track {
+    background: var(--accent-color);
+}*/
+.filter input[type=range]::-webkit-slider-thumb {
+    border: none;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background: var(--light-color);
+    /*margin-top: -8px;*/
+    transform: translateY(calc(-50% + 2px));
+}
+.filter input[type=range]:focus::-webkit-slider-thumb {
+    background: var(--accent-color);
+}
+.btn--color + .btn--color{
+    margin-left: 15px;
+}
+.btn--color{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0.6rem 1.7rem;
+    border-radius: 2rem;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+.btn--color.btn--reset{
+    margin-left: 30px;
+}
+.btn--color label{
+    user-select: none;
+    width: fit-content;
+}
+.filter input[type=color]{
+    all: unset;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+.color--output{
+    display: inline-block;
+    min-width: 14px;
+    height: 14px;
+    margin-left: 10px;
+    border: 1px solid var(--dark-color);
+}
+#color-main{
+    background-color: var(--light-color);
+}
+#color-bg{
+    background-color: var(--dark-color);
+}
+#color-accent{
+    background-color: var(--accent-color);
+}
+
 
 
 /* Main - list project */
+
+
 
 .list__project{
     display: grid;
@@ -165,8 +281,7 @@ header{
 }
 
 
-
-
+/* FOOTER - ABOUT */
 
 footer{
     position: fixed;
@@ -240,7 +355,7 @@ footer:hover{
 
 .modal--open #modal{
     border-left: var(--border);
-    padding: 1.5rem var(--padding-window);
+    padding: 0 var(--padding-window) 1.5rem var(--padding-window);
     opacity: 1;
     transition: padding var(--transi-max), opacity var(--transi-max)  calc(var(--transi-max) / 2);
 }
@@ -252,10 +367,36 @@ footer:hover{
     height: 100vh;
     opacity: 0;
 }
+#modal.switch--project > * {
+    animation: switchProject var(--transi-max) ease-in-out;
+}
+@keyframes switchProject {
+    0%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(110%);
+        opacity: 0;
+    }
+    50.1%{
+        transform: translateX(-110%);
+        opacity: 0;
+
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
 .modal__heading{
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--dark-color);
+    padding: 1rem 0;
 }
 #modal h1{
     font-size: 4rem;
@@ -286,9 +427,11 @@ footer:hover{
 .modal__info{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 30px 0;
 }
 .tag__item{
+    display: inline-block;
     background-color: var(--light-color);
     color: var(--dark-color);
     padding: 0.7rem 1.4rem;

@@ -11,6 +11,10 @@ const homeWp = document.querySelector("#home");
 const ListProjectsWp = document.querySelector(".list__project");
 const footer = document.querySelector("footer");
 const titleFooter = footer.querySelector(".name");
+const btnsColor = document.querySelectorAll(".btn--color input");
+const resetBtn = document.querySelector("#reset--btn");
+const sliderGrid = document.querySelector("#slider--size");
+
 
 //utils
 function setStyles(element, styles) {
@@ -23,6 +27,13 @@ function setCssProp(propName, value){
 	return document.documentElement.style.setProperty(propName, value);
 }
 
+
+function changeColorTheme(e){
+	setCssProp(e.target.getAttribute('data-var-color'), e.target.value)
+}
+function changeGridSize(e){
+	setCssProp('--size-card', e.target.value + 'px')
+}
 
 function switchProject(){
 	let delay = 500;
@@ -62,6 +73,7 @@ IconCloseModal.addEventListener('click', ()=>{
 	modalProject.classList.remove('switch--project');
 })
 
+
 // Toggle filter
 IconSettings.addEventListener('click', ()=>{
 	homeWp.classList.toggle('filter--open');
@@ -69,6 +81,24 @@ IconSettings.addEventListener('click', ()=>{
 		setStyles(ListProjectsWp, {marginTop: filterWp.offsetHeight + "px"}) :
 		setStyles(ListProjectsWp, {marginTop: 0})
 })
+
+//filters events
+const starterColors = {
+	'--dark-color': "#131212",
+	'--light-color': "#DBE6EC",
+	'--accent-color': "#E3FD41",
+}
+btnsColor.forEach(btn => {
+	btn.addEventListener('input', changeColorTheme)
+});
+resetBtn.addEventListener('click', () => {
+	for(let color in starterColors){
+		console.log(color)
+		setCssProp(color, starterColors[color]);
+	}
+})
+sliderGrid.addEventListener('input', changeGridSize)
+
 
 // Hover Footer
 let TitleFooter = ['Timothé Joubert', 'En savoir plus']

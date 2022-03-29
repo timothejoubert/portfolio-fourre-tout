@@ -133,4 +133,9 @@
     src: url('../assets/fonts/noi-grotesk-var.ttf') format('truetype');
     font-display: swap;
 }
+@font-face {
+    font-family: "Varent";
+    src: url('../assets/fonts/VarentGrotesk.ttf') format('truetype');
+    font-display: swap;
+}
 

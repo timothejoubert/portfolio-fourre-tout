@@ -17,6 +17,8 @@
 
     --transi-hover: 300ms;
     --transi-max: 1000ms;
+
+    --size-card: 280px;
 }
 .modal--open{
     --listProject--width: 50%;
@@ -191,8 +193,9 @@ header{
     border-radius: 2rem;
     color: var(--dark-color);
     background-color: var(--light-color);
+    cursor: pointer;
 }
-.btn--color.btn--reset{
+.btn--color.last--btn{
     margin-left: 30px;
 }
 .btn--color label{
@@ -234,7 +237,7 @@ header{
 
 .list__project{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--size-card), 1fr));
     grid-gap: 20px;
     grid-auto-rows: min-content;
     max-width: var(--max-width);
@@ -247,11 +250,13 @@ header{
     position: relative;
     width: 100%;
     height: 350px;
+    cursor: pointer;
 }
 .project__item h1,
 .project__item h2,
 .project__item h3{
     font-size: 1.3rem;
+    font-variation-settings: "wght" 800, "ital" 0;
     text-transform: uppercase;
 }
 .project__item.light__img{
@@ -272,6 +277,11 @@ header{
     overflow: hidden;
     border-radius: 0 50px 0 0;
     background-color: var(--light-color);
+    transition: outline var(--transi-hover), outline-offset var(--transi-hover) ;
+}
+.project__item:hover .project__item__img{
+    outline: 2px solid var(--accent-color);
+    outline-offset: -2px;
 }
 .project__item__img img{
     object-fit: cover;
@@ -279,7 +289,54 @@ header{
     height: 100%;
     opacity: 0;
 }
-
+.new--symbol{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+}
+.project__item:hover .new--symbol h4{
+    transform: scale(1.1);
+}
+.project__item:hover .new--symbol svg{
+    width: 70px;
+    height: 70px;
+}
+.new--symbol h4{
+    font-family: "Varent", Serif, serif;
+    font-size: 1.4rem;
+    line-height: 1rem;
+    font-variation-settings: "wght" 700, "ital" 0;
+    position: absolute;
+    transform: rotate(6deg);
+    transition: transform var(--transi-hover) ease;
+}
+.new--symbol svg{
+    transform-origin: center;
+    width: 100%;
+    height: 100%;
+    animation: anim-star 15s infinite ease;
+    transition: all var(--transi-hover) ease;
+}
+.bg-star{
+    fill: var(--accent-color);
+}
+.stroke-star{
+    stroke: var(--dark-color);
+    stroke-width: 1px;
+}
+@keyframes anim-star {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
 
 /* FOOTER - ABOUT */
 
